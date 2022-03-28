@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+
+    commands:
+      - npm install
+
+  test:
+    commands:
+      CI=true npm test
+
+  build:
+    commands:
+      # run build script
+      - npm run build
+
+artifacts:
+  files:
+    - build/**/*
